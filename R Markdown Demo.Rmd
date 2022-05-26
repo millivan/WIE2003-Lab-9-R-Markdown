@@ -1,0 +1,78 @@
+---
+title: "R Markdown Demo"
+author: "Lim Zheng Yu"
+date: "`r Sys.Date()`"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+# My first knitr document
+
+## Introduction  
+**Markdown** is a very basic and easy-to-use syntax for styling written documents.
+It's very easy to make some words **bold** and other words *italic* with Markdown.
+You can even [link to FCSIT](http://www.fsktm.um.edu.my)! 
+
+**Here is a code chunk and it prints the code and result.** 
+
+```{r}
+set.seed(1)
+x <- rnorm(100)
+mean(x)
+```
+
+*Here is a code chunk but it only print the result.*
+```{r, echo=FALSE}
+set.seed(10)
+x <- rnorm(100)
+mean(x)
+```
+
+Here is a code chunk but it doesn't print anything!!!
+```{r, echo=FALSE, results="hide"}
+set.seed(10)
+x <- rnorm(100)
+mean(x)
+```
+
+Inline text computation
+
+```{r, echo=FALSE}
+time <-format(Sys.time(), "%a %b %d %X %Y")
+```
+
+### The current time is `r time`.
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+This is the violin plot for the dataset:
+
+```{r, echo=FALSE}
+library(ggplot2)
+ggplot(cars, aes(x=speed, y=dist)) + geom_violin(trim=FALSE)
+```
+
+Another feature of R Markdown is the table:
+
+Day          |Date
+------------ |--------------
+Monday       |23/5/2022
+Tuesday      |24/5/2022
+Wednesday    |25/5/2022
+Thursday     |26/5/2022
+Friday       |27/5/2022
+Saturday     |28/5/2022
+Sunday       |29/5/2022
+
+Finally this is an image from the [Keukenhof](https://keukenhof.nl/en/) website:
+![tulips](Picture1.jpg)

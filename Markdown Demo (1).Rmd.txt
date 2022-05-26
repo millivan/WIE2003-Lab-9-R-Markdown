@@ -1,0 +1,53 @@
+---
+title: "Markdown Demo"
+author: "Dr. Salimah Mokhtar"
+date: "5/19/2022"
+output: html_document
+---
+# My First knitr document  
+# Salimah M
+
+## Introduction  
+**Markdown** is a very basic and easy-to-use syntax for styling written documents.
+It's very easy to make some words **bold** and other words *italic* with Markdown.
+You can even [link to FCSIT](http://www.fsktm.um.edu.my)! 
+
+**Here is a code chunk and it prints the code and result.** 
+
+```{r}
+set.seed(1)
+x <- rnorm(100)
+mean(x)
+```
+
+*Here is a code chunk but it only print the result.*
+```{r, echo=FALSE}
+set.seed(10)
+x <- rnorm(100)
+mean(x)
+```
+
+Here is a code chunk but it doesn't print anything!!!
+```{r, echo=FALSE, results="hide"}
+set.seed(10)
+x <- rnorm(100)
+mean(x)
+```
+
+Inline text computation
+
+```{r, echo=FALSE}
+time <-format(Sys.time(), "%a %b %d %X %Y")
+```
+
+### The current time is `r time`.
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
